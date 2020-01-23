@@ -1,21 +1,16 @@
 {
-  "name": "chrome-basic-extension",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "크롬 기초 확장 프로그램",
-  "homepage_url": "https://hiseon.me",
-  "background": {
-    "scripts": [
-      "background.js"
+    "name": "youtube-learn-helper",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "유튜브를 이용하여 영어 쉐도잉을 쉽게 하기 위한 플러그인",
+    "homepage_url": "http://www.achusoft.co.kr",
+    "content_scripts": [
+        {
+            "matches": ["https://www.youtube.com/*"],
+            "js": ["background.js"]
+        }
     ],
-    "persistent": true
-  },
-  "browser_action": {
-    "default_title": "Inject!"
-  },
-  "permissions": [
-    "https://*/*",
-    "http://*/*",
-    "tabs"
-  ]
+    "permissions": ["activeTab"],
+    "minimum_chrome_version": "23",
+    "web_accessible_resources": ["inject.js"]
 }
