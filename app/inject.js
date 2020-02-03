@@ -1,4 +1,6 @@
-(async function() {
+window.onload = async function() {
+    await sleep(1000);
+
     let step;
     document.querySelector('[aria-label="추가 작업"]').click();
     await sleep(100);
@@ -56,4 +58,4 @@
             }, num);
         });
     }
-})();
+};
